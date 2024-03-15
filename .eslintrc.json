@@ -10,8 +10,11 @@
     "sourceType": "module"
   },
   "rules": {
+    "linebreak-style": ["error", "unix"],
+    "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
@@ -25,5 +28,12 @@
         "jsxBracketSameLine": false
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
   }
 }
