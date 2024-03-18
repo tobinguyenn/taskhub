@@ -40,16 +40,16 @@ function Login() {
         <Checkbox id="terms" />
         <CardTitle>Remember me?</CardTitle>
       </CardCheckBox>
-      <Button variant="login" type="submit">
+      <Button variant="submit" type="submit">
         Login
       </Button>
       <CardDescription className="">Or login by</CardDescription>
       <div className="flex w-full justify-center">
-        <Button variant="gg" size="half">
+        <Button className="bg-yellow-200 hover:bg-yellow-300 text-black shadow-md " size="half">
           <FaGoogle className="mr-1" />
           <CardTitle className="font-semibold">Google</CardTitle>
         </Button>
-        <Button variant="fb" size="half">
+        <Button className="bg-blue-400 hover:bg-blue-500 text-black shadow-md" size="half">
           <FaFacebookF className="mr-1" />
           <CardTitle className="font-semibold">FaceBook</CardTitle>
         </Button>
