@@ -10,7 +10,13 @@
     "sourceType": "module"
   },
   "rules": {
+    "linebreak-style": ["error", "unix"],
+    "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "prettier/prettier": [
       "error",
       {
@@ -21,14 +27,7 @@
         "trailingComma": "es5",
         "jsxBracketSameLine": false
       }
-    ],
-    "no-alert": "error",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "import/no-extraneous-dependencies": "off",
-    "import/prefer-default-export": "off",
-    "react/prop-types": "off",
-    "react/jsx-props-no-spreading": "off",
-    "jsx-a11y/heading-has-content": "off"
+    ]
   },
   "settings": {
     "import/resolver": {
