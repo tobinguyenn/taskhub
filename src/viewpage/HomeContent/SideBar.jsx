@@ -1,16 +1,26 @@
+// File: SideBar.js
+import { createOnClickHandler } from 'lib/utils';
 import { useState } from 'react';
-import { HiMenuAlt3 } from 'react-icons/hi';
+import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 
 function SideBar() {
-  const [open, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(true);
+
+  const onClickHandler = createOnClickHandler(() => {
+    console.log(isOpen);
+    setOpen(!isOpen);
+  });
+
   return (
-    <div className={`relative bg-gray-400 ${open ? 'w-1/4' : 'w-12'} duration-500 text-gray-100 px-4`}>
-      <HiMenuAlt3
-        className="absolute top-4 right-4 text-2xl text-black cursor-pointer"
-        onClick={() => setOpen(!open)}
-      />
-      Side bar here
+    <div className={`relative bg-gray-400 ${isOpen ? 'w-12' : 'w-1/4'} duration-500 text-gray-100 px-4`}>
+      {isOpen ? (
+        <HiArrowRight className="absolute top-4 right-4 text-2xl text-black cursor-pointer" onClick={onClickHandler} />
+      ) : (
+        <HiArrowLeft className="absolute top-4 right-4 text-2xl text-black cursor-pointer" onClick={onClickHandler} />
+      )}
+      SideBar
     </div>
   );
 }
+
 export default SideBar;
