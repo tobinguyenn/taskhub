@@ -7,7 +7,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<Login />} />
+        <Route index path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/register" element={<Register />} />
       </Routes>

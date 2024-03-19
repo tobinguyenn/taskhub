@@ -65,7 +65,7 @@ function Login() {
         <CardDescription className="py-1">More choices</CardDescription>
         <CardTitle className="py-3">
           Already have an account?{' '}
-          <Link to="/" className="underline">
+          <Link to="/login" className="underline">
             Login now!
           </Link>
         </CardTitle>

@@ -64,7 +64,7 @@ function Login() {
         </div>
         <CardTitle className="py-3">
           Dont have a account?{' '}
-          <Link to="register" className="underline">
+          <Link to="/register" className="underline">
             Register now!
           </Link>
         </CardTitle>
