@@ -12,6 +12,10 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        h_menubar: '7%',
+        h_mainbar: '93%',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

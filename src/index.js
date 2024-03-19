@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './styles/global.css';
-import Register from './viewpage/Register';
+import Home from './viewpage/Home';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Register />
+    <Home />
   </React.StrictMode>
 );
 
