@@ -5,6 +5,7 @@ import { Input } from 'components/ui/input';
 import { useForm } from 'react-hook-form';
 import { FaLock } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
+import { Link, Outlet } from 'react-router-dom';
 
 function Login() {
   const {
@@ -64,11 +65,12 @@ function Login() {
         <CardDescription className="py-1">More choices</CardDescription>
         <CardTitle className="py-3">
           Already have an account?{' '}
-          <a className="underline" href="http://">
-            Login now
-          </a>
+          <Link to="/" className="underline">
+            Login now!
+          </Link>
         </CardTitle>
       </CardForm>
+      <Outlet />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { FaFacebookSquare, FaLock } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { MdEmail } from 'react-icons/md';
+import { Link, Outlet } from 'react-router-dom';
 
 function Login() {
   const {
@@ -63,11 +64,12 @@ function Login() {
         </div>
         <CardTitle className="py-3">
           Dont have a account?{' '}
-          <a className="underline" href="http://">
+          <Link to="register" className="underline">
             Register now!
-          </a>
+          </Link>
         </CardTitle>
       </CardForm>
+      <Outlet />
     </div>
   );
 }
