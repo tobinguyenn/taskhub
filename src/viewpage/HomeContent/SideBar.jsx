@@ -1,8 +1,11 @@
 import { CardContent } from 'components/ui/card';
+import { ScrollArea } from 'components/ui/scroll-area';
 import { SideBarItem } from 'components/ui/sidebarComponent';
 import { cn } from 'lib/utils';
 import { useState } from 'react';
-import { FaChevronLeft, FaChevronRight, FaFlipboard, FaUserAlt } from 'react-icons/fa';
+import { BsThreeDots } from 'react-icons/bs';
+
+import { FaChevronLeft, FaChevronRight, FaFlipboard, FaPlus, FaUserAlt } from 'react-icons/fa';
 
 function SideBar() {
   const [isOpen, setOpen] = useState(false);
@@ -16,9 +19,12 @@ function SideBar() {
     isOpen ? 'w-11' : 'w-1/4',
     'overflow-hidden'
   );
-  const iconToggle = cn('absolute top-2 right-2 text-2xl text-white cursor-pointer');
+  const iconToggle = cn(
+    'absolute top-2 right-2 text-2xl text-white p-1 cursor-pointer border border-white-xs rounded-sm ',
+    isOpen ? 'hover:bg-green-500' : 'hover:bg-red-500'
+  );
 
-  const hiddenItem = cn(isOpen ? 'hidden' : '');
+  const hiddenItem = cn(isOpen ? 'opacity-0' : 'opacity-100');
 
   return (
     <div className={sidebarClassName}>
@@ -27,15 +33,18 @@ function SideBar() {
       ) : (
         <FaChevronLeft className={iconToggle} onClick={onClickHandler} />
       )}
-      <div
-        className={`${isOpen ? 'bg-blue-700' : 'bg-transparent'} transition duration-500 h-h_menubar border-b border-white mb-5 shadow-xl `}
-      />
-      <CardContent className={hiddenItem}>Workspaces Management</CardContent>
-      <SideBarItem className={hiddenItem} icon={<FaFlipboard />} title="Boards" />
-      <SideBarItem className={hiddenItem} icon={<FaUserAlt />} title="Users" />
-      <CardContent className={hiddenItem}>Your Boards</CardContent>
-      <SideBarItem className={hiddenItem} icon={<FaFlipboard />} title="Board 1" />
-      <SideBarItem className={hiddenItem} icon={<FaFlipboard />} title="Board 2" />
+      <div className=" border-b border-white bg-transparent transition duration-500 h-h_menubar mb-5 shadow-xl" />
+      <CardContent content="Board Management" className={hiddenItem} />
+      <SideBarItem icon={<FaFlipboard />} title="Boards" className={hiddenItem} />
+      <SideBarItem icon={<FaUserAlt />} title="Users" className={hiddenItem} />
+      <CardContent content="Your Board" activity={<FaPlus />} className={hiddenItem} />
+      <ScrollArea className="h-1/4">
+        <SideBarItem icon={<FaFlipboard />} title="Board 1" activity={<BsThreeDots />} className={hiddenItem} />
+        <SideBarItem icon={<FaFlipboard />} title="Board 2" activity={<BsThreeDots />} className={hiddenItem} />
+        <SideBarItem icon={<FaFlipboard />} title="Board 3" activity={<BsThreeDots />} className={hiddenItem} />
+        <SideBarItem icon={<FaFlipboard />} title="Board 4" activity={<BsThreeDots />} className={hiddenItem} />
+        <SideBarItem icon={<FaFlipboard />} title="Board 5" activity={<BsThreeDots />} className={hiddenItem} />
+      </ScrollArea>
     </div>
   );
 }

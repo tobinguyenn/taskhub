@@ -29,8 +29,15 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
 ));
 CardDescription.displayName = 'CardDescription';
 
-const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('text-sm font-semibold my-4 pl-4', className)} {...props} />
+const CardContent = React.forwardRef(({ className, content, activity, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn('group text-sm font-semibold my-4 pl-4 flex justify-between items-center', className)}
+    {...props}
+  >
+    {content}
+    <span className="ml-auto mr-4 opacity-0 duration-300 group-hover:opacity-100 hover:cursor-pointer">{activity}</span>
+  </div>
 ));
 CardContent.displayName = 'CardContent';
 
