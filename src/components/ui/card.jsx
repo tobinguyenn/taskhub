@@ -16,7 +16,7 @@ const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
-      ' m-2 text-sm text-black font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+      ' m-2 text-sm text-zinc-700 font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
       className
     )}
     {...props}
@@ -30,7 +30,7 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
 CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />
+  <div ref={ref} className={cn('text-sm font-semibold my-4 pl-4', className)} {...props} />
 ));
 CardContent.displayName = 'CardContent';
 
