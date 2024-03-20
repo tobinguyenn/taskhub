@@ -17,13 +17,14 @@ function SideBar() {
     'text-gray-100',
     'px-4'
   );
+  const iconClassName = cn('absolute top-3 right-3 text-2xl text-black cursor-pointer');
 
   return (
     <div className={sidebarClassName}>
       {isOpen ? (
-        <FaChevronRight className=" text-2xl text-black cursor-pointer" onClick={onClickHandler} />
+        <FaChevronRight className={iconClassName} onClick={onClickHandler} />
       ) : (
-        <FaChevronLeft className="text-2xl text-black cursor-pointer" onClick={onClickHandler} />
+        <FaChevronLeft className={iconClassName} onClick={onClickHandler} />
       )}
     </div>
   );
