@@ -22,9 +22,7 @@ function Login() {
   return (
     <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-bl from-purple-400 via-pink-300 to-blue-200 ">
       <CardForm onSubmit={handleSubmit(onSubmit)}>
-        <CardHeader>
-          <CardTitle className="font-bold p-3 text-3xl">LOGIN</CardTitle>
-        </CardHeader>
+        <CardHeader className="text-3xl my-5">LOGIN</CardHeader>
         <Input
           type="email"
           placeholder="Email"
