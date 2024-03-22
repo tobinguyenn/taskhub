@@ -91,7 +91,7 @@ function SideBar() {
                     Cancel
                   </Button>
                   <Button type="submit" variant="submit" size="half" className="mb-5 rounded-md h-8 w-1/2">
-                    Delete
+                    Create
                   </Button>
                 </div>
               </CardForm>
