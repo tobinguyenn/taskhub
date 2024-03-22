@@ -18,7 +18,7 @@ function SideBar() {
   };
 
   const sidebarClassName = cn(
-    'relative flex flex-col bg-zinc-900 duration-500 text-gray-100',
+    'relative flex flex-col bg-transparent/90 duration-500 text-gray-100',
     isOpen ? 'w-11' : 'w-1/4',
     'overflow-hidden'
   );
