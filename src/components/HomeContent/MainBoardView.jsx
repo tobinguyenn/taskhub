@@ -2,7 +2,7 @@ import BoardDetailBar from './BoardDetailBar';
 
 function MainBoardView() {
   return (
-    <div className="bg-green-600 w-full">
+    <div className=" w-full bg-transparent text-border ">
       <BoardDetailBar />
       MainBoardView
     </div>

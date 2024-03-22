@@ -2,16 +2,19 @@ import * as React from 'react';
 
 import { cn } from 'lib/utils';
 
-const Input = React.forwardRef(({ className, icon, type, ...props }, ref) => {
+const Input = React.forwardRef(({ className, label, icon, type, ...props }, ref) => {
   return (
-    <div className="flex justify-center items-center bg-gray-200 shadow-md h-10 w-2/3 my-3 ">
-      <span className="w-1/6 pl-4">{icon}</span>
-      <input
-        type={type}
-        className={cn('w-5/6 focus:outline-none bg-transparent text-sm', className)}
-        ref={ref}
-        {...props}
-      />
+    <div className="w-2/3 my-3 ">
+      <div className="text-xs font-bold">{label}</div>
+      <div className="flex justify-center items-center bg-transparent/5 shadow-md h-10 ">
+        <span className="w-1/4 pl-3 text-sm font-semibold">{icon}</span>
+        <input
+          type={type}
+          className={cn('w-3/4 focus:outline-none bg-transparent text-sm font-semibold', className)}
+          ref={ref}
+          {...props}
+        />
+      </div>
     </div>
   );
 });
