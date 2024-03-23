@@ -1,5 +1,5 @@
 import { Button } from 'components/ui/button';
-import { CardContent, CardForm, CardHeader, CardTitle } from 'components/ui/card';
+import { CardContent, CardForm, CardTitle } from 'components/ui/card';
 import { Input } from 'components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from 'components/ui/popover';
 import { ScrollArea } from 'components/ui/scroll-area';
@@ -18,7 +18,7 @@ function SideBar() {
   };
 
   const sidebarClassName = cn(
-    'relative flex flex-col bg-transparent/90 duration-500 text-gray-100',
+    'relative flex flex-col bg-transparent/80 duration-500 text-gray-100',
     isOpen ? 'w-11' : 'w-1/4',
     'overflow-hidden'
   );
@@ -72,7 +72,7 @@ function SideBar() {
             </PopoverTrigger>
             <PopoverContent className={isCreateBoard ? '' : 'hidden'}>
               <CardForm onSubmit={handleCreateBoard} className="w-full">
-                <CardHeader>Create new board</CardHeader>
+                <CardTitle className="text-black font-semibold p-1">Create new board</CardTitle>
                 <Separator className="bg-stone-300 w-5/6" />
                 <Input
                   label="Title:"

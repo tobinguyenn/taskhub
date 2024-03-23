@@ -13,8 +13,8 @@ module.exports = {
     },
     extend: {
       height: {
-        h_menubar: '5%',
-        h_mainbar: '95%',
+        h_menubar: '6%',
+        h_mainbar: '94%',
       },
       colors: {
         border: 'hsl(var(--border))',
