@@ -101,7 +101,7 @@ function SideBar() {
         className={hiddenItem}
       />
 
-      <ScrollArea className="h-1/4">
+      <ScrollArea className="h-1/3">
         {sidebarItems.map((item) => (
           <SideBarItem
             key={item.id}
