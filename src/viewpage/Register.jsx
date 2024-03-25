@@ -21,7 +21,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center w-screen h-screen bg-gradient-to-bl from-purple-400 via-pink-300 to-blue-200">
+    <div className="flex items-center justify-center w-screen h-screen bg-[linear-gradient(to_right_top,_#a349a7,_#9a55ae,_#9160b4,_#8969b8,_#8271ba)]">
       <CardForm onSubmit={handleSubmit(onSubmit)}>
         <CardHeader className="text-3xl my-5">REGISTER</CardHeader>
         <Input
