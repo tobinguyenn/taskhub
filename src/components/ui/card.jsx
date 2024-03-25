@@ -59,9 +59,4 @@ const CardForm = React.forwardRef(({ className, ...props }, ref) => (
 ));
 CardFooter.displayName = 'CardForm';
 
-const CardCheckBox = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('flex w-2/3 m-2 items-center space-x-2', className)} {...props} />
-));
-CardContent.displayName = 'CardCheckBox';
-
-export { Card, CardCheckBox, CardContent, CardDescription, CardFooter, CardForm, CardHeader, CardTitle };
+export { Card, CardContent, CardDescription, CardFooter, CardForm, CardHeader, CardTitle };

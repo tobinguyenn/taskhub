@@ -1,5 +1,5 @@
 import { Button } from 'components/ui/button';
-import { CardCheckBox, CardDescription, CardForm, CardHeader, CardTitle } from 'components/ui/card';
+import { CardDescription, CardForm, CardHeader, CardTitle } from 'components/ui/card';
 import { Checkbox } from 'components/ui/checkbox';
 import { Input } from 'components/ui/input';
 import { useForm } from 'react-hook-form';
@@ -53,10 +53,7 @@ function Login() {
         {errors.retypePassword && (
           <CardDescription className="text-red-400">{errors.retypePassword.message}</CardDescription>
         )}
-        <CardCheckBox>
-          <Checkbox id="terms" className="text-green-500" />
-          <CardTitle>Remember me?</CardTitle>
-        </CardCheckBox>
+        <Checkbox label="Remember me ?" className="w-2/3" />
         <Button variant="submit" type="submit">
           Register
         </Button>
