@@ -10,11 +10,24 @@ import {
   CommandList,
   CommandSeparator,
 } from 'components/ui/command';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from 'components/ui/dialog';
+import { Input } from 'components/ui/input';
+import { MemberItem } from 'components/ui/memberItem';
 import { MenubarContent, MenubarMenu } from 'components/ui/menubar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'components/ui/select';
 import { Separator } from 'components/ui/separator';
-import { FaUserPlus } from 'react-icons/fa';
+import { CopyIcon } from 'lucide-react';
+import { FaUser, FaUserPlus } from 'react-icons/fa';
+import { FaLink } from 'react-icons/fa6';
 import { IoFilterSharp, IoReorderThree } from 'react-icons/io5';
+import { MdAttachEmail } from 'react-icons/md';
 
 function BoardDetailBar() {
   return (
@@ -82,15 +95,49 @@ function BoardDetailBar() {
       </MenubarMenu>
       <Separator orientation="vertical" className="h-2/3 mx-3 bg-zinc-500" />
       <MenubarMenu>
-        <MenubarTrigger>
-          <Button
-            variant="outline"
-            className="text-white p-1 h-8 rounded-sm border-zinc-500 bg-transparent hover:border-white"
-          >
-            <FaUserPlus className="mr-2" />
-            Member
-          </Button>
-        </MenubarTrigger>
+        <Dialog>
+          <DialogTrigger>
+            <Button
+              variant="outline"
+              className="text-white p-1 h-8 rounded-sm border-zinc-500 bg-transparent hover:border-white"
+            >
+              <FaUserPlus className="mr-2" />
+              Member
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Share Board</DialogTitle>
+              <DialogDescription>Anyone who has this link will be able to view this Board</DialogDescription>
+              <div className="flex items-center space-x-2 w-full">
+                <Input icon={<FaLink />} defaultValue="https://linkdemo.com" className="w-5/6" readOnly />
+                <Button type="submit" className="w-1/6 rounded-sm">
+                  <CopyIcon className="h-4 w-4" />
+                </Button>
+              </div>
+            </DialogHeader>
+            <div className="flex items-center space-x-2">
+              <Input icon={<MdAttachEmail />} placeholder="Enter email or name" />
+              <Select>
+                <SelectTrigger className="w-1/4">
+                  <SelectValue placeholder="Member" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="Member">Member</SelectItem>
+                  <SelectItem value="Viewer">Viewer</SelectItem>
+                  <SelectItem value="Admin">Admin</SelectItem>
+                </SelectContent>
+              </Select>
+              <Button type="submit" variant="submit" className="w-1/5 rounded-md">
+                Invite
+              </Button>
+            </div>
+            <div>
+              <MemberItem avatar={<FaUser />} name="Do Thanh Vinh (you)" email="vinh@gmail.com" permision="Member" />
+              <MemberItem avatar={<FaUser />} name="Nguyen Tuan Anh" email="anhnt@gmail.com" permision="Admin" />
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <MenubarMenu>
           <IoReorderThree className="mx-4" />
@@ -99,5 +146,4 @@ function BoardDetailBar() {
     </Menubar>
   );
 }
-
 export default BoardDetailBar;
