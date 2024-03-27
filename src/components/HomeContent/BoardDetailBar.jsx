@@ -1,5 +1,6 @@
 import { Menubar, MenubarTrigger } from '@radix-ui/react-menubar';
 import { Button } from 'components/ui/button';
+import { CardHeader } from 'components/ui/card';
 import { Checkbox } from 'components/ui/checkbox';
 import {
   Command,
@@ -23,6 +24,7 @@ import { MemberItem } from 'components/ui/memberItem';
 import { MenubarContent, MenubarMenu } from 'components/ui/menubar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from 'components/ui/select';
 import { Separator } from 'components/ui/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from 'components/ui/tabs';
 import { cn } from 'lib/utils';
 import { useState } from 'react';
 import { FaCopy, FaUser, FaUserPlus } from 'react-icons/fa';
@@ -37,7 +39,7 @@ function BoardDetailBar() {
     setShowActionBar(!showActionBar);
   };
   const classNameActionBar = cn(
-    'right-0 flex flex-col float-right bg-transparent/80 duration-500 text-gray-100 ',
+    'right-0 flex flex-col justify-center items-center float-right bg-stone-900 duration-500 text-gray-100 rounded-tl rounded-b',
     showActionBar ? 'w-0' : 'w-1/4',
     'overflow-hidden'
   );
@@ -152,14 +154,29 @@ function BoardDetailBar() {
           </Dialog>
         </MenubarMenu>
         <MenubarMenu>
-          {showActionBar ? (
-            <IoReorderThree onClick={handleToggleActionBar} className="mx-4 " />
-          ) : (
-            <IoCloseSharp onClick={handleToggleActionBar} className="w-1/4 text-right bg-transparent/80" />
-          )}
+          <button
+            type="button"
+            className={`w-20 h-full ml-5 rounded-tl flex justify-center duration-500 items-center ${showActionBar ? 'bg-transparent' : 'bg-stone-900'}`}
+            onClick={handleToggleActionBar}
+          >
+            {showActionBar ? <IoReorderThree className="text-xl" /> : <IoCloseSharp className=" text-white text-xl" />}
+          </button>
         </MenubarMenu>
       </Menubar>
-      <div className={classNameActionBar}>dfndnbda</div>
+      <div className={classNameActionBar}>
+        <CardHeader>Menu</CardHeader>
+        <Separator className="h-[0.5px] bg-zinc-400 w-11/12" />
+        <Tabs defaultValue="account" className="w-full">
+          <TabsList className="w-full bg-transparent">
+            <TabsTrigger value="account" className="rounded-sm">
+              Log Activity
+            </TabsTrigger>
+            <TabsTrigger value="password">Labels and Tags</TabsTrigger>
+          </TabsList>
+          <TabsContent value="account">Make changes to your account here.</TabsContent>
+          <TabsContent value="password">Change your password here.</TabsContent>
+        </Tabs>
+      </div>
     </di>
   );
 }
